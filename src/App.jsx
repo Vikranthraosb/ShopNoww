@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+    <div className="h-screen w-screen bg-red-100 flex">
+      <nav className="w-[15%] h-full bg-zinc-200 flex flex-col items-center pt-5">
+        <a
+          className="p-3 border border-1 border-blue-300 rounded-lg mb-3"
+          href="/create"
+        >
+          Add New Product
         </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <hr className="my-3 w-[80%]" />
+        <h1 className="text-2xl mb-4 w-[80%] font-semibold">Category</h1>
+        <ul className=" w-[80%]">
+          <li className="flex items-center gap-2 mb-2">
+            <span className="rounded-full bg-blue-300 w-[15px] h-[15px]"></span>
+            Cat-1
+          </li>
+          <li className="flex items-center gap-2 mb-2">
+            <span className="rounded-full bg-green-300 w-[15px] h-[15px]"></span>
+            Cat-2
+          </li>
+          <li className="flex items-center gap-2 mb-2">
+            <span className="rounded-full bg-orange-300 w-[15px] h-[15px]"></span>
+            Cat-3
+          </li>
+        </ul>
+      </nav>
+
+      <div className="h-full w-[85%] bg-green-200">
+        <div className="card p-5 border shadow rounded-lg w-[18%] h-[25vh] flex justify-center items-center">
+          <div
+            className="w-full h[80%] bg-contain bg-no-repeat"
+            style={{
+              backgroundImage: "url(https://fakestoreapi.com/products/1)",
+            }}
+          ></div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
