@@ -33,13 +33,14 @@ function App() {
           <div
             className="w-full h[80%] bg-contain bg-no-repeat"
             style={{
-              backgroundImage: "url(https://fakestoreapi.com/products/1)",
+              backgroundImage: `URL(https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg)`,
             }}
           ></div>
         </div>
       </div>
     </div>
   );
+  // left at
 }
 
 export default App;
