@@ -28,14 +28,18 @@ function App() {
         </ul>
       </nav>
 
-      <div className="h-full w-[85%] bg-green-200">
-        <div className="card p-5 border shadow rounded-lg w-[18%] h-[25vh] flex justify-center items-center">
+      <div className="h-full w-[85%] bg-green-100 p-3 pt-5 flex flex-wrap overflow-x-hidden overflow-y-auto">
+        <div className="card p-2 border bg-red-100 shadow rounded-lg w-full md:w-[14%] h-[30vh] flex flex-col justify-center items-center m-2">
           <div
-            className="w-full h[80%] bg-contain bg-no-repeat"
+            className="mb-1 w-full h-[90%] bg-no-repeat bg-center bg-cover hover:scale-110"
             style={{
-              backgroundImage: `URL(https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg)`,
+              backgroundImage:
+                "url(https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg)",
             }}
           ></div>
+          <h1 className="text-center text-sm sm:text-base hover:text-blue-300">
+            Lorem ipsum.
+          </h1>
         </div>
       </div>
     </div>
