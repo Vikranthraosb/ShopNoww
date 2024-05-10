@@ -9,7 +9,7 @@ const Context = (props) => {
   const getproducts = async () => {
     try {
       const { data } = await axios("/products");
-      console.log("Response Data:", data); // Log the response data
+      // console.log("Response Data:", data);
       setproducts(data);
     } catch (error) {
       console.log("Error fetching products:", error);
