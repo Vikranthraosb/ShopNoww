@@ -3,8 +3,13 @@ import { ProductContext } from "../utils/Context";
 
 function Nav() {
   const [products] = useContext(ProductContext);
-  const distince_category =
-    products && products.reduce((acc, cv) => [...acc, cv], []);
+  const distinct_category =
+    products && products.reduce((acc, cv) => [...acc, cv.category], []);
+  // we'llget all the categories, but they are repeted
+  distinct_category = [...new set(distinct_category)];
+  // to make it distinct category array, we've used set. it is an inbuilt js class stores unique elements.
+  console.log(distinct_category);
+
   return (
     <nav className="w-[15%] h-full bg-zinc-200 flex flex-col items-center pt-5">
       <a
