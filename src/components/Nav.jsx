@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ProductContext } from "../utils/Context";
 
 function Nav() {
+  const [products] = useContext(ProductContext);
+  const distince_category =
+    products && products.reduce((acc, cv) => [...acc, cv], []);
   return (
     <nav className="w-[15%] h-full bg-zinc-200 flex flex-col items-center pt-5">
       <a
