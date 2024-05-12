@@ -9,7 +9,14 @@ function Nav() {
   // we'llget all the categories, but they are repeted
   distinct_category = [...new Set(distinct_category)];
   // to make it distinct category array, we've used set. it is an inbuilt js class stores unique elements.
-  console.log(distinct_category);
+
+  const colors = () => {
+    return `rgba(${(Math.random() * 255).toFixed()},
+    ${(Math.random() * 255).toFixed()},
+    ${(Math.random() * 255).toFixed()}, 0.5)`;
+  };
+  // making the bullets of nav different color
+  // you may skip this step too
 
   return (
     <nav className="w-[15%] h-full bg-zinc-200 flex flex-col items-center pt-5">
@@ -28,7 +35,10 @@ function Nav() {
             key={index}
             className="flex items-center gap-2 mb-2"
           >
-            <span className="rounded-full bg-blue-300 w-[15px] h-[15px]"></span>
+            <span
+              className="rounded-full w-[15px] h-[15px]"
+              style={{ backgroundColor: colors() }}
+            ></span>
             {item}
           </Link>
         ))}
