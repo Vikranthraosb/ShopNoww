@@ -24,7 +24,8 @@ const Home = () => {
   };
 
   useEffect(() => {
-    if (!filterdProducts) setfilterdProducts(products);
+    if (!filterdProducts || category == "undefined")
+      setfilterdProducts(products);
     if (category != "undefined") getproductcategory();
   }, [category, products]);
 

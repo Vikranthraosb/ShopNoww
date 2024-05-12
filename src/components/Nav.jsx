@@ -27,7 +27,7 @@ function Nav() {
         Add New Product
       </a>
       <hr className="my-3 w-[80%]" />
-      <h1 className="text-2xl mb-4 w-[80%] font-semibold">Category</h1>
+      <h1 className="text-2xl mb-4 w-[80%] font-semibold"> Sort By Category</h1>
       <div className=" w-[80%]">
         {distinct_category.map((item, index) => (
           <Link
