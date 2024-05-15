@@ -23,5 +23,5 @@ function App() {
     </div>
   );
 }
-// left video at 1:36 minuits on saturday
+// left video at 1.44 minuits on saturday
 export default App;
