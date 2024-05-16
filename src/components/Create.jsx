@@ -6,9 +6,23 @@ function Create() {
   const [category, setcategory] = useState("");
   const [price, setprice] = useState("");
   const [description, setdescription] = useState("");
+
+  const Addproducthandler = (e) => {
+    e.preventDefault();
+    const product = {
+      title,
+      image,
+      category,
+      price,
+      description,
+    };
+    console.log(product);
+  };
+
   return (
     <form
       action=""
+      onSubmit={Addproducthandler}
       className="p-[5%] w-screen h-screen flex flex-col items-center"
     >
       <h1 className="mb-5 w-1/2 text-3xl text-center font-semibold">
