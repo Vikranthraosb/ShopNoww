@@ -34,6 +34,7 @@ function Create() {
     };
     setproducts([...products, product]);
     console.log(products);
+    localStorage.setItem("products", JSON.stringify([...products, product]));
     navigate("/");
   };
 
