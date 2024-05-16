@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { ProductContext } from "../utils/Context";
+import { nanoid } from "nanoid";
 
 function Create() {
+  const [products, setproducts] = useContext(ProductContext);
   const [title, settitle] = useState("");
   const [image, setimage] = useState("");
   const [category, setcategory] = useState("");
@@ -9,14 +12,26 @@ function Create() {
 
   const Addproducthandler = (e) => {
     e.preventDefault();
+    if (
+      title.trim().length < 3 ||
+      image.trim().length < 3 ||
+      category.trim().length < 2 ||
+      price.trim().length < 1 ||
+      description.trim().length < 3
+    ) {
+      alert("every field must have atleast 3 charecters");
+      return;
+    }
     const product = {
+      id: nanoid(),
       title,
       image,
       category,
       price,
       description,
     };
-    console.log(product);
+    setproducts([...products, product]);
+    console.log(products);
   };
 
   return (
