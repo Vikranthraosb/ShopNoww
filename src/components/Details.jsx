@@ -1,10 +1,11 @@
 // import axios from "../utils/axios";
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Loading from "./Loading";
 import { ProductContext } from "../utils/Context";
 
 function Details() {
+  const navigate = useNavigate();
   const [products, setproducts] = useContext(ProductContext);
 
   const [product, setproduct] = useState(null);
@@ -28,6 +29,13 @@ function Details() {
     }
   }, []);
 
+  const ProductDeleteHandler = (id) => {
+    const FilterdProducts = products.filter((p) => p.id !== id);
+    setproducts(FilterdProducts);
+    localStorage.setItem("products", JSON.stringify(FilterdProducts));
+    navigate("/");
+  };
+
   return product ? (
     <div className="w-[80%] h-full m-auto py-[10%] px-10 flex items-center lg:px-[10vw]">
       <img
@@ -44,9 +52,12 @@ function Details() {
           <Link className="px-8 p-2 w-8 border border-1 border-blue-400 rounded-lg text-blue-500 m-4">
             Edit
           </Link>
-          <Link className="px-5 p-2 w-4 border border-1 border-red-400 rounded-lg  text-red-500 m-4">
+          <button
+            onClick={() => ProductDeleteHandler(product.id)}
+            className="px-5 p-2 border border-1 border-red-400 rounded-lg  text-red-500 m-4"
+          >
             Delete
-          </Link>
+          </button>
         </div>
       </div>
     </div>

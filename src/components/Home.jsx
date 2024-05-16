@@ -14,19 +14,24 @@ const Home = () => {
 
   const [filterdProducts, setfilterdProducts] = useState(null);
 
-  const getproductcategory = async () => {
-    try {
-      const { data } = await axios.get(`/products/category/${category}`);
-      setfilterdProducts(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const getproductcategory = async () => {
+  //   try {
+  //     const { data } = await axios.get(`/products/category/${category}`);
+  //     setfilterdProducts(data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
+  //filtering function
   useEffect(() => {
-    if (!filterdProducts || category == "undefined")
+    if (!filterdProducts || category == "undefined") {
       setfilterdProducts(products);
-    if (category != "undefined") getproductcategory();
+    }
+    if (category != "undefined") {
+      //  getproductcategory();
+      setfilterdProducts(products.filter((p) => p.category == category));
+    }
   }, [category, products]);
 
   // console.log(filterdProducts);
