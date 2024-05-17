@@ -30,10 +30,19 @@ function Details() {
   }, []);
 
   const ProductDeleteHandler = (id) => {
-    const FilterdProducts = products.filter((p) => p.id !== id);
-    setproducts(FilterdProducts);
-    localStorage.setItem("products", JSON.stringify(FilterdProducts));
-    navigate("/");
+    // Show a confirmation dialog
+    const userConfirmed = window.confirm(
+      "Are you sure you want to delete this product?"
+    );
+
+    // If the user clicks "OK", proceed with deletion
+    if (userConfirmed) {
+      const FilterdProducts = products.filter((p) => p.id !== id);
+      setproducts(FilterdProducts);
+      localStorage.setItem("products", JSON.stringify(FilterdProducts));
+      navigate("/");
+    }
+    // If the user clicks "Cancel", do nothing
   };
 
   return product ? (
