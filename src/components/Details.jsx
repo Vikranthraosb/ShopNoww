@@ -49,7 +49,10 @@ function Details() {
         <h2 className="text-green-500 ">{product.price}</h2>
         <p>{product.description}</p>
         <div className="w-full mt-4">
-          <Link className="px-8 p-2 w-8 border border-1 border-blue-400 rounded-lg text-blue-500 m-4">
+          <Link
+            to={`/edit/${product.id}`}
+            className="px-8 p-2 w-8 border border-1 border-blue-400 rounded-lg text-blue-500 m-4"
+          >
             Edit
           </Link>
           <button
